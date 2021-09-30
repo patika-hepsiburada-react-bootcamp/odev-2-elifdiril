@@ -16,9 +16,9 @@ function GameOver (){
         <div>
             <Lottie
                 options={defaultOptions}
-                height={200}
+                height={300}
                 marginTop={20}
-                width={200}
+                width={400}
             />
         </div>
     )

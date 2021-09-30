@@ -16,8 +16,7 @@ function GetStarted(){
         <div>
             <Lottie
                 options={defaultOptions}
-                height={200}
-                marginTop={20}
+                height={50}
                 width={200}
             />
         </div>

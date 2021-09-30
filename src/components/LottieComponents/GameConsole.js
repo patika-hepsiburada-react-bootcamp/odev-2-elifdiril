@@ -1,7 +1,7 @@
 import Lottie from 'react-lottie';
-import * as animationData from '../../jsonFiles/try-again.json';
+import * as animationData from '../../jsonFiles/games-icon.json';
 
-function TryAgain (){
+function GameConsole(){
 
     const defaultOptions={
         loop: true,
@@ -16,7 +16,7 @@ function TryAgain (){
         <div>
             <Lottie
                 options={defaultOptions}
-                height={150}
+                height={300}
                 marginTop={20}
                 width={300}
             />
@@ -24,4 +24,4 @@ function TryAgain (){
     )
 }
 
-export default TryAgain;
+export default GameConsole;
