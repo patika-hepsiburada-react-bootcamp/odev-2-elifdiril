@@ -9,7 +9,7 @@ import GetStarted from './components/LottieComponents/GetStarted';
 import Win from './components/LottieComponents/Win';
 import Restart from './components/LottieComponents/Restart';
 import GameConsole from './components/LottieComponents/GameConsole';
-import { Row, Col } from 'reactstrap';
+import { Row, Col, Alert } from 'reactstrap';
 import TableModal from './components/TableModal';
 
 //default scores
@@ -35,7 +35,7 @@ function App() {
   const [point, setPoint] = useState(0);
   const [userName, setUserName] = useState("");
   const [word, setWord] = useState(_word[Math.floor(Math.random() * _word.length)]);
-
+  const [correctWord, setCorrectWord] = useState("");
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
 
@@ -47,6 +47,9 @@ function App() {
       setStartGame(false);
       setPoint(0);
       updateLocalStorage();
+
+      //for show the correct word at the end
+      setCorrectWord(word);
     }
     //new game
     if (state === 0) {
@@ -81,7 +84,9 @@ function App() {
       <TableModal modal={modal} toggle={toggle} />
 
       {/** Game Over !!!! */}
-      {gameOver && <div><GameOver /></div>}
+      {gameOver && <div><div className="alert1"><Alert color="danger">
+        The word was "{correctWord}"
+      </Alert></div><GameOver /></div>}
 
       {/** If the game playing for the first time, call GetStarted component */}
       {User.length === 2 && state === 0 && startGame === false &&
