@@ -85,7 +85,7 @@ function App() {
 
       {/** Game Over !!!! */}
       {gameOver && <div><div className="alert1"><Alert color="danger">
-        The word was "{correctWord}"
+        The Word was "{correctWord}"
       </Alert></div><GameOver /></div>}
 
       {/** If the game playing for the first time, call GetStarted component */}
@@ -109,7 +109,9 @@ function App() {
       {/** Restart button for winnig situation */}
       {winState && <div><Win /><button className="restart-button" onClick={() => {
         setStartGame(true); setGameOver(false); setState(0); setWinState(false);
-      }}><Restart /></button></div>}
+      }}><Restart /></button><Alert color="danger">
+      Your Score is "{point}"
+    </Alert></div>}
 
       {/** Hangman image and keyboard */}
       {startGame && !winState &&
