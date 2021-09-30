@@ -16,9 +16,9 @@ function Restart(){
         <div>
             <Lottie
                 options={defaultOptions}
-                height={200}
+                height={100}
                 marginTop={20}
-                width={200}
+                width={100}
             />
         </div>
     )

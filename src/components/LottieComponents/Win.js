@@ -16,9 +16,9 @@ function Win(){
         <div>
             <Lottie
                 options={defaultOptions}
-                height={200}
+                height={400}
                 marginTop={20}
-                width={200}
+                width={400}
             />
         </div>
     )

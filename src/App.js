@@ -40,7 +40,6 @@ function App() {
   const toggle = () => setModal(!modal);
 
   useEffect(() => {
-    console.log(word)
     //game over
     if (state === 5 && startGame) {
       setState(0);
@@ -102,13 +101,13 @@ function App() {
         <button onClick={() => {
           setStartGame(true); setGameOver(false); setState(0);
         }}><TryAgain /></button>}
-      {/** Restart button */}
+      {/** Restart button for winnig situation */}
       {winState && <div><Win /><button className="restart-button" onClick={() => {
         setStartGame(true); setGameOver(false); setState(0); setWinState(false);
       }}><Restart /></button></div>}
 
       {/** Hangman image and keyboard */}
-      {startGame &&
+      {startGame && !winState &&
         <div className="container">
           <Hangman state={state} />
           <GameBoard word={word} state={state} setState={setState} setWinState={setWinState} point={point} setPoint={setPoint} />
