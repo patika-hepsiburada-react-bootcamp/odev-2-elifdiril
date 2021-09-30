@@ -12,16 +12,17 @@ import GameConsole from './components/LottieComponents/GameConsole';
 import { Row, Col } from 'reactstrap';
 import TableModal from './components/TableModal';
 
+//default scores
 const UserList = [
   {
     "id": 0,
     "name": "elif",
-    "point": 100,
+    "point": 500,
   },
   {
     "id": 1,
     "name": "elif2",
-    "point": 500,
+    "point": 900,
   }
 ]
 
@@ -40,6 +41,7 @@ function App() {
 
   useEffect(() => {
     console.log(word)
+    //game over
     if (state === 5 && startGame) {
       setState(0);
       setGameOver(true);
@@ -47,6 +49,7 @@ function App() {
       setPoint(0);
       updateLocalStorage();
     }
+    //new game
     if (state === 0) {
       setWord(_word[Math.floor(Math.random() * _word.length)]);
     }
@@ -56,7 +59,7 @@ function App() {
   }, [state, winState]);
 
   const updateLocalStorage = () => {
-
+    //add new score
     if (JSON.parse(localStorage.getItem('users')).length === 0) {
       localStorage.setItem('users', JSON.stringify(UserList));
     }
@@ -99,13 +102,14 @@ function App() {
         <button onClick={() => {
           setStartGame(true); setGameOver(false); setState(0);
         }}><TryAgain /></button>}
-
+      {/** Restart button */}
       {winState && <div><Win /><button className="restart-button" onClick={() => {
         setStartGame(true); setGameOver(false); setState(0); setWinState(false);
       }}><Restart /></button></div>}
 
+      {/** Hangman image and keyboard */}
       {startGame &&
-      <div className="container">
+        <div className="container">
           <Hangman state={state} />
           <GameBoard word={word} state={state} setState={setState} setWinState={setWinState} point={point} setPoint={setPoint} />
         </div>}

@@ -24,7 +24,10 @@ function GameBoard({word, state, setState, setWinState, point, setPoint}) {
 
     return (
         <div>
+            {/** Lines according to the word */}
             <p>{maskedWord}</p>
+
+            {/** Buttons (keyboard) */}
             {alphabets.map((alphabet, index) => <button key={index} onClick={() => {
                 if (word.toLowerCase().includes(alphabet.toLowerCase())) {
                     setCorrectGuesses([...correctGuesses, alphabet.toLowerCase()]);
@@ -38,5 +41,4 @@ function GameBoard({word, state, setState, setWinState, point, setPoint}) {
     );
 }
 
-// {!maskedWord.includes("_") && state < 5 && <p>You won!</p>}
 export default GameBoard;

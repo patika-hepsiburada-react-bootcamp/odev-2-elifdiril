@@ -9,3 +9,7 @@
 1. Yanlış seçim hakkı dolduğunda "Game Over" yazısı ve "Try Again" butonu görünmeli.
 1. Tasarımı dilediğiniz gibi yapabilirsiniz.
 
+# Açıklamalar
+
+## Oyun ilk başlatıldığında yazılan nick local storageta tutuldu ve tekrar nick istemesi engellendi.
+## Score Table butonuna basılarak önceki scorelar görülebilir. 

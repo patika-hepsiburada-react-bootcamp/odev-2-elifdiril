@@ -7,12 +7,12 @@ import StateFive from '../images/7.png';
 
 function Hangman({ state }) {
 
+    //Return the hangman image according to state
+
     return (
 
         <div className="container">
-
             {(() => {
-
                 switch (state) {
                     case 0:
                         return (
