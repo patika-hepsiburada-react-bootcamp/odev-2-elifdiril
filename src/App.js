@@ -60,7 +60,7 @@ function App() {
 
   const updateLocalStorage = () => {
     //add new score
-    if (JSON.parse(localStorage.getItem('users')).length === 0) {
+    if (!JSON.parse(localStorage.getItem('users'))) {
       localStorage.setItem('users', JSON.stringify(UserList));
     }
 

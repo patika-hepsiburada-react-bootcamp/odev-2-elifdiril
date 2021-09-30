@@ -15,7 +15,7 @@ function ScoreBoard() {
                     </tr>
                 </thead>
                 <tbody>
-                    {
+                    { userList &&
                         userList.map((user) => {
                             return (
                                 <tr key={user.id}>
