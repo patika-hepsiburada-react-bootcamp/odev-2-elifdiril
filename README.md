@@ -13,3 +13,5 @@
 
 ## Oyun ilk başlatıldığında yazılan nick local storageta tutuldu ve tekrar nick istemesi engellendi.
 ## Score Table butonuna basılarak önceki scorelar görülebilir. 
+
+ # [Oyunu oynamak için tıkla](https://pacific-falls-89812.herokuapp.com/) 
